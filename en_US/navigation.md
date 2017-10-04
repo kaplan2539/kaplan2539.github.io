@@ -1,9 +1,9 @@
 <!--
-  -- d.eadc0.de
+  -- Your wiki name
   -- Do NOT remove the leading `#` character.
   -->
 
-# Your wiki name
+# d.eadc0.de
 
 
 <!--
