@@ -1,5 +1,5 @@
 <!--
-  -- Name of your wiki
+  -- d.eadc0.de
   -- Do NOT remove the leading `#` character.
   -->
 
