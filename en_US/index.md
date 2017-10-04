@@ -1,8 +1,13 @@
 # Hello!
 
+## 2017-10-03
 
-## Welcome
+I add this to almost all of the bash scripts I'm writing
+```
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+```
 
+SCRIPTDIR=$(
 
 ## Section 2
 
