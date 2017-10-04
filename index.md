@@ -1,5 +1,1 @@
----
-layout: default
-title: index
----
-#Hej!
+# Hej!
