@@ -35,3 +35,8 @@ call plug#end()
 ```
 
 Now start vim hit `ESC` and type `:PlugInstall`. That will install the NERDTree plugin. Hit `q` to exit the vim-plug pane.
+
+Finally, add this line to `~/.vimrc` to toggle NERDTree via `<C-n>`:
+```
+map <C-n> :NERDTreeToggle<CR>
+```
