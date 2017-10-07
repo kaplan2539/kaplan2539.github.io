@@ -3,8 +3,7 @@
 vim-plug
 -------------------
 
-The [vim-plug](https://github.com/junegunn/vim-plug) plugin manages vim plugins! Install:
-Installation:
+The [vim-plug](https://github.com/junegunn/vim-plug) plugin manages vim plugins! Installation:
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
