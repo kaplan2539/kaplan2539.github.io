@@ -13,7 +13,7 @@ dtc -I fs /sys/firmware/devicetree/base >/custom.dts
 # modify the dt
 vi /custom.dts
 
-# conpile dts into dtb
+# compile dts into dtb
 dtc -I dts -O dtb -o /boot/dtb /custom.dts
 
 # restart the system
