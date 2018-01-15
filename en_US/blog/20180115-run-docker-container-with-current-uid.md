@@ -3,14 +3,10 @@
 Run Docker container with current users UID/GUID
 ------------------------------------------------
 
-I often use Docker to try out software in an isolated environment without
-'polluting' my workstation with the installation of dependencies.
-It is also very useful to bundle dependencies for a certain project in a Docker
-image, e.g. the compiler toolchain for the latest single board computer.
+I often use Docker to try out software in an isolated environment without 'polluting' my workstation with the installation of dependencies.
+It is also very useful to bundle dependencies for a certain project in a Docker image, e.g. the compiler toolchain for the latest single board computer.
 
-In the following I describe a very trivial example: Instead of installing the
-`zip` package on my Ubuntu workstation, I decide to create a Docker container
-image base on the latest Debian version that has `zip` installed.
+In the following I describe a very trivial example: Instead of installing the `zip` package on my Ubuntu workstation, I decide to create a Docker container image base on the latest Debian version that has `zip` installed.
 
 First we need a `Dockerfile`:
 ```
@@ -24,8 +20,7 @@ Now run `docker build` in the directory of the `Dockerfile`:
 docker build -t zipper .
 ```
 
-So, to create a zip achive that contains all the file in let's say
-`$HOME/Pictures` we can run
+So, to create a zip achive that contains all the file in let's say `$HOME/Pictures` we can run
 ```
 docker run --rm -it -v $HOME/Pictures:/Pictures -v $PWD:/work -w /work \
   zipper \
@@ -37,8 +32,7 @@ This leaves us with the archive file `pictures.zip` in the current directory:
 -rw-r--r-- 1 root root 2578830 Jan 15 10:24 pictures.zip
 ```
 
-But what's that? The file is owned by root.  To change that we have to tell
-Docker to run the the container with your current users UID/GUID:
+But what's that? The file is owned by root. To change that we have to tell Docker to run the the container with your current users UID/GUID:
 ```
 docker run --rm -it -v $HOME/Pictures:/Pictures -v $PWD:/work -w /work \
    -u $(id -u):$(id -g) \
@@ -51,11 +45,9 @@ This time `pictures2.zip` is owned by the current user:
 -rw-r--r-- 1 alex alex 2578830 Jan 15 10:30 pictures2.zip
 ```
 
-As part of an automated build process there are often scripts that run
-inside of a Docker container that should produces files that are accessible by
-the current workstation user but in addition need to acquire super-user rights
-for certain taskts. That's very the `sudo` command comes in.
-However, simply running the trivial example
+As part of an automated build process there are often scripts that run inside of a Docker container.
+They need to produce files that are accessible by the current workstation user, but in addition need to acquire super-user rights for certain tasks.
+That's where the `sudo` command comes in. However, simply running the trivial example
 ```
 docker run --rm -it -v $HOME/Pictures:/Pictures -v $PWD:/work -w /work \
    -u $(id -u):$(id -g) \
@@ -102,7 +94,7 @@ Now this file needs to be owned by root. On your workstation type:
 sudo chown root:root sudoers
 ```
 
-And finally we pass in our passwordless `sudoers` file and try again:
+And finally, we pass in our passwordless `sudoers` file and try again:
 ```
 docker run --rm -it -v $HOME/Pictures:/Pictures \
   -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/groupd:ro \
