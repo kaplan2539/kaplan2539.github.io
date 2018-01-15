@@ -1,5 +1,7 @@
 - - - -
-[preview:7](blog/20180104-squash-with-very-first-commit.md)
+[preview:7](20180115-run-docker-container-with-current-uid.md)
+- - - -
+[preview:5](blog/20180104-squash-with-very-first-commit.md)
 - - - -
 [preview:5](blog/20171211-delete-docker-containers.md)
 - - - -
