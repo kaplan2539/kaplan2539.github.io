@@ -1,0 +1,8 @@
+- name: d.eadc0.de
+  link: /
+- name: blog
+  link: /blog.html
+- name: tags
+  link: /tags.html
+- name: about
+  link: /about.html
